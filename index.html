@@ -1,0 +1,263 @@
+<hmtl>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Random User API Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      #user-container {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      #user-info {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      #user-info img {
+        max-width: 100%;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      #user-info p {
+        margin: 5px 0;
+      }
+
+      #new-user-button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="user-container">
+      <div id="user-info">
+        <img src="https://randomuser.me/api/portraits/women/92.jpg" alt="Emmi Kämpf">
+        <p><strong>Name:</strong> Emmi Kämpf</p>
+        <p><strong>Gender:</strong> female</p>
+        <p><strong>Email:</strong> emmi.kampf@example.com</p>
+        <p><strong>Username:</strong> smallrabbit761</p>
+      </div>
+      <button id="new-user-button">Get New User</button>
+    </div>
+
+    <script>
+      const new- user - button = document.getElementById('user-info');
+      const newUserButton = document.getElementById('new-user-button');
+
+      // Function to fetch a new random user
+      function fetchRandomUser() {
+        fetch('https://randomuser.me/api/')
+          .then(response => response.json())
+          .then(data => {
+            const user = data.results[0];
+            const fullName = `${user.name.first} ${user.name.last}`;
+            const gender = user.gender;
+            const email = user.email;
+            const username = user.login.username;
+            const picture = user.picture.large;
+
+            const userHTML = `
+              <img src="${picture}" alt="${fullName}">
+              <p><strong>Name:</strong> ${fullName}</p>
+              <p><strong>Gender:</strong> ${gender}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Username:</strong> ${username}</p>
+            `;
+
+            userInfoElement.innerHTML = userHTML;
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      }
+
+      // Event listener for the "Get New User" button
+      newUserButton.addEventListener('click', fetchRandomUser);
+
+      // Fetch a random user on page load
+      fetchRandomUser();
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ('WebSocket' in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+          var address = protocol + window.location.host + window.location.pathname + '/ws';
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == 'reload') window.location.reload();
+            else if (msg.data == 'refreshcss') refreshCSS();
+          };
+          if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+            console.log('Live reload enabled.');
+            sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+          }
+        })();
+      }
+      else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+      }
+    // ]]>
+    </script>
+
+
+
+
+
+    <title>Random User API Demo</title>
+
+
+
+
+
+    <script>
+      const userInfoElement = document.getElementById('user-info');
+      const newUserButton = document.getElementById('new-user-button');
+
+      // Function to fetch a new random user
+      function fetchRandomUser() {
+        fetch('https://randomuser.me/api/')
+          .then(response => response.json())
+          .then(data => {
+            const user = data.results[0];
+            const fullName = `${user.name.first} ${user.name.last}`;
+            const gender = user.gender;
+            const email = user.email;
+            const username = user.login.username;
+            const picture = user.picture.large;
+
+            const userHTML = `
+              <img src="${picture}" alt="${fullName}">
+              <p><strong>Name:</strong> ${fullName}</p>
+              <p><strong>Gender:</strong> ${gender}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Username:</strong> ${username}</p>
+            `;
+
+            userInfoElement.innerHTML = userHTML;
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      }
+
+      // Event listener for the "Get New User" button
+      newUserButton.addEventListener('click', fetchRandomUser);
+
+      // Fetch a random user on page load
+      fetchRandomUser();
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ('WebSocket' in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+          var address = protocol + window.location.host + window.location.pathname + '/ws';
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == 'reload') window.location.reload();
+            else if (msg.data == 'refreshcss') refreshCSS();
+          };
+          if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+            console.log('Live reload enabled.');
+            sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+          }
+        })();
+      }
+      else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+      }
+    // ]]>
+    </script>
+
+
+
+
+
+    <title>Random User API Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      #user-container {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      #user-info {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      #user-info img {
+        max-width: 100%;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      #user-info p {
+        margin: 5px 0;
+      }
+
+      #new-user-button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        curs
+    </style>
+  </body>
+</hmtl>
